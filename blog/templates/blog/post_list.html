@@ -8,15 +8,20 @@
             <h1><a href='/'>O que é NBA?</a></h1>
         </div>
 
+        {% for post in posts %}
         <div>
-            <p>publicado: 28/01/2022, 22:10</p>
-            <p>NBA é a sigla de National Basketball Association (Associação Nacional de Basquetebol), uma liga profissional de basquetebol dos Estados Unidos e Canadá. Foi fundada em 1946, em Nova Iorque, com o nome BAA (Basketball Association of America). O nome NBA foi originado após fusão da BAA com a NBL (National Basketball League).<br> A NBA é considerada uma das mais importantes ligas de basquetebol mundial, sendo que os seus jogadores são os que recebem os mais elevados salários. A liga possui 29 equipes dos Estados Unidos e uma equipe do Canadá.<br> Uma das mais famosas equipes que compõem a NBA é a Chicago Bulls, da qual fez parte Michael Jordan, considerado o melhor jogador de basquete de todos os tempos, hexacampeão da NBA pela Chicago Bulls. </p>
+
+           <p>published: {{ post.published_date }}</p>
+            <h2><a href="/">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaks }}</p>
+ 
         </div>
-        
-        <div>
-            <p>publicado: 28/01/2022, 22:12</p>
-            <h2><a href='/'>O que é NBB?</a></h2>
-            <p>NBB é a sigla para Novo Basquete Brasil, principal campeonato do esporte no Brasil. Criada em 2008, a competição é administrada pela LNB (Liga Nacional de Basquete) e tem a chancela da CBB (Confederação Brasileira de Basquete).<br> Os próprios clubes são responsáveis pelas decisões tomadas pela LNB, em um modelo descentralizado de gestão. A criação do NBB foi responsável por revigorar o basquete como um dos esportes mais populares do Brasil.</p>
+        {% endfor %}
+        <div>  
+
+            {{ posts }}
+
+
         </div>
 
         
